@@ -1,0 +1,366 @@
+#include <iostream>
+#include <fstream>
+#include <istream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+string sign_up()
+{
+	string username, password, user, pass;
+	cout<<"Enter the username: ";
+    cin>>username;
+    cout<<"Enter the password: ";
+    cin>>password;
+    
+    ofstream write("database.txt", ios::out | ios::app);
+    write<<username<<" "<<password<<endl;
+    cout<<"Your account created"<<endl<<endl;
+    
+    return username;
+}
+
+string Log_in()
+{
+	int found = 0;
+	string username, password, user, pass;
+	
+	cout<<"Enter the username: ";
+    cin>>username;
+    cout<<"Enter the password: ";
+    cin>>password;
+    
+    ifstream read("database.txt", ios::out | ios::app);
+    while(read>>user>>pass)
+    {
+    	if(user==username && pass==password)
+    	{
+    		found=1;
+    		break;
+		}
+	}
+	
+	read.close();
+	
+	if(found)
+	{
+		cout<<"You are successfully logined."<<endl<<endl;
+		return username;
+	}
+	else
+	{
+		username = "wrong";
+		cout<<"Incorrect credentials."<<endl<<endl;
+		return username;
+	}
+}
+
+bool Class_Object()
+{
+	system("cls");
+	cout<<"CLASS - A class is an object descriptor.        "<<endl;
+	cout<<"It is the building block that leads to Object-Oriented programming in C++.        "<<endl;
+	cout<<"It is user-defined data type whuch holds it's own data members and member functions."<<endl<<endl;
+	
+	cout<<"OBJECT - An object is anything that can be classified using two types of features:         "<<endl;
+	cout<<"1. Properties - They describe the object structurally.         "<<endl;
+	cout<<"2. Operations - They describe the object behaviourally."<<endl<<endl;;
+
+	
+	int choice;
+	cout<<"1 - Back"<<endl;
+	cout<<"2 - Log Out"<<endl;
+	cout<<"Enter your choice: ";
+	cin>>choice;
+	cout<<endl;
+	
+	while(choice)
+	{
+		if(choice==1)
+		{
+			return true;
+		}
+		else if(choice==2)
+		{
+			return false;
+		}
+		else
+		{
+			cout<<"Not a valid choice"<<endl;
+		}
+		
+		cout<<"1 - Back"<<endl;
+		cout<<"2 - Log Out"<<endl;
+		cout<<"Enter your choice: ";
+		cin>>choice;
+		cout<<endl;
+	}
+}
+
+bool Constructor_Destructor()
+{
+	system("cls");
+	cout<<"CONSTRUCTOR - A constructor is a very special member function"
+		<<"	within a class which is used to initialize various member"
+		<<" variables inside an object. Normally a constructor has the"
+		<<" same name name as the class name"<<endl<<endl;
+		
+	cout<<"DESTRUCTOR - Destructor is an instance member function which"
+		<<" is invoked automatically whenever an object is going to be destroyed."<<endl;
+	cout<<"Destructors are usually used to deallocate memory and do other"
+		<<" cleanup for a class object and its class members when the object is destroyed.";
+	cout<<endl<<endl;
+	
+	int choice;
+	cout<<"1 - Back"<<endl;
+	cout<<"2 - Log Out"<<endl;
+	cout<<"Enter your choice: ";
+	cin>>choice;
+	cout<<endl;
+	
+	while(choice)
+	{
+		if(choice==1)
+		{
+			return true;
+		}
+		else if(choice==2)
+		{
+			return false;
+		}
+		else
+		{
+			cout<<"Not a valid choice"<<endl;
+		}
+		
+		cout<<"1 - Back"<<endl;
+		cout<<"2 - Log Out"<<endl;
+		cout<<"Enter your choice: ";
+		cin>>choice;
+		cout<<endl;
+	}
+}
+
+bool Prepocessor()
+{
+	system("cls");
+	cout<<"PREPROCESSOR - A preprocessor is a software agent that works before "
+		 <<"compiler can work. It replaces foreign elements to native."<<endl<<endl;
+		 
+	cout<<"PREPROCESSOR STATEMENT - It is also known as precompiler statement."<<endl;
+	cout<<"A preprocessor statement is not a C/C++ statement"
+		<<" because it's processed by a preprocessor"<<endl<<endl;
+	
+	cout<<"PREPROCESSOR DIRECTIVES - The preprocessors are the directives, which give"
+		<<" instructions to the compiler to preprocess the information before actual"
+		<<" compilation starts."<<endl;
+	cout<<"All preprocessor directives begin with #"<<endl;
+	cout<<"For example, #include, #define, etc."<<endl<<endl;                          
+	
+	int choice;
+	cout<<"1 - Back"<<endl;
+	cout<<"2 - Log Out"<<endl;
+	cout<<"Enter your choice: ";
+	cin>>choice;
+	cout<<endl;
+	
+	while(choice)
+	{
+		if(choice==1)
+		{
+			return true;
+		}
+		else if(choice==2)
+		{
+			return false;
+		}
+		else
+		{
+			cout<<"Not a valid choice"<<endl;
+		}
+		
+		cout<<"1 - Back"<<endl;
+		cout<<"2 - Log Out"<<endl;
+		cout<<"Enter your choice: ";
+		cin>>choice;
+		cout<<endl;
+	}
+	
+}
+
+bool Macros_Block()
+{
+	system("cls");
+	cout<<"MACROS - Macros are identifiers that represent statements or"
+		<<" expressions."<<endl;
+	cout<<"Macro is defined by #define directive"<<endl;
+	cout<<"Macro cannot continue in multiple lines unless you "
+		<<"terminate every line with back slash (\)"<<endl;
+	cout<<"Macros are better in performance. "<<endl<<endl;
+	
+	cout<<"BLOCK EVALUATION - The value of block is always the value of "
+		<<"value of last statement in block"<<endl;
+	cout<<"For example, "<<endl;
+	cout<<"int a = ({"<<endl;
+	cout<<"          10+12;"<<endl;
+	cout<<" 	    7+3;"<<endl;
+	cout<<" 		})"<<endl;
+	cout<<"Here value of a comes out to be 10"<<endl<<endl;
+	
+	
+	int choice;
+	cout<<"1 - Back"<<endl;
+	cout<<"2 - Log Out"<<endl;
+	cout<<"Enter your choice: ";
+	cin>>choice;
+	cout<<endl;
+	
+	while(choice)
+	{
+		if(choice==1)
+		{
+			return true;
+		}
+		else if(choice==2)
+		{
+			return false;
+		}
+		else
+		{
+			cout<<"Not a valid choice"<<endl;
+		}
+		
+		cout<<"1 - Back"<<endl;
+		cout<<"2 - Log Out"<<endl;
+		cout<<"Enter your choice: ";
+		cin>>choice;
+		cout<<endl;
+	}
+}
+
+bool select_topic(string user)
+{
+	int choice, log_out=1;
+	
+	system("cls");
+	cout<<"----WELCOME "<<user<<"----"<<endl<<endl;
+	cout<<"1 - Class and Object"<<endl;
+	cout<<"2 - Constructor and Destructor"<<endl;
+	cout<<"3 - Prepocessor"<<endl;
+	cout<<"4 - Macros and Block evaluation"<<endl;
+	cout<<"0 - Log Out"<<endl;
+	cout<<"Enter your choice: ";
+	cin>>choice;
+	cout<<endl;
+	
+	while(log_out)
+	{
+		if(choice==1)
+		{
+			log_out = Class_Object();
+			
+			if(log_out==0)
+			{
+				break;
+			}
+		}
+		else if(choice==2)
+		{
+			log_out = Constructor_Destructor();
+			
+			if(log_out==0)
+			{
+				break;
+			}
+		}
+		else if(choice==3)
+		{
+			log_out = Prepocessor();
+			
+			if(log_out==0)
+			{
+				break;
+			}
+		}
+		else if(choice==4)
+		{
+			log_out = Macros_Block();
+			
+			if(log_out==0)
+			{
+				break;
+			}
+		}
+		else if(choice==0)
+		{
+			break;
+		}
+		else
+		{
+			cout<<"Not a valid choice";
+		}
+		
+		system("cls");
+		cout<<"----WELCOME "<<user<<"----"<<endl<<endl;
+		cout<<"1 - Class and Object"<<endl;
+		cout<<"2 - Constructor and Destructor"<<endl;
+		cout<<"3 - Prepocessor"<<endl;
+		cout<<"4 - Macros and Block evaluation"<<endl;
+		cout<<"0 - Log Out"<<endl;
+		cout<<"Enter your choice: ";
+		cin>>choice;
+		cout<<endl;
+	}
+}
+
+int main()
+{
+	int choice;
+	int log_out=1;
+	int logged_in=0;
+	string user;
+	
+	cout<<"1 - Sign_up"<<endl;
+	cout<<"2 - Log_in"<<endl;
+	cout<<"Enter your choice: ";
+	cin>>choice;
+	cout<<endl;
+	
+	while(choice)
+	{
+		if(choice==1)
+		{	
+			user = sign_up();
+			logged_in=1;
+		}
+		else if(choice==2)
+		{
+			user = Log_in();
+			if(user=="wrong")
+			logged_in=0;
+			else
+			logged_in=1;
+		}
+		else
+		{
+			cout<<"\nNot a valid choice."<<endl;
+		}	
+		
+		if(logged_in==1)
+		{
+			log_out = select_topic(user);
+			system("cls");
+			cout<<"Thank You for visiting"<<endl<<endl;
+			logged_in=0;
+		}
+		
+		cout<<"1 - Sign_up"<<endl;
+		cout<<"2 - Log_in"<<endl;
+		cout<<"Enter your choice: ";
+		cin>>choice;
+		cout<<endl;
+	}
+		
+	return 0;
+}
